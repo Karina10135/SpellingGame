@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class LetterManager : MonoBehaviour
 {
-    public int letterID;
+    public string letter;
 
+    public void CheckLetter()
+    {
 
+    }
 	
 }

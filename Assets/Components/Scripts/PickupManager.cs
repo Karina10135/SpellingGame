@@ -10,6 +10,7 @@ public class PickupManager : MonoBehaviour
     public bool holding;
     public float maxDistance;
     Color debugColor = Color.red;
+    public bool placeArea;
 
     private void FixedUpdate()
     {
@@ -38,12 +39,21 @@ public class PickupManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-
+            
 
             if (holding)
             {
-                Drop();
-                return;
+
+                if (placeArea)
+                {
+                    CheckLetterPlacement();
+                }
+                else
+                {
+                    Drop();
+                    return;
+                }
+                
             }
 
         }
@@ -70,9 +80,23 @@ public class PickupManager : MonoBehaviour
         holding = false;
     }
 
-    void PlaceLetter()
+    void CheckLetterPlacement()
     {
+        print("checking letter");
+        print(heldObject.GetComponent<LetterManager>().letter);
+        print(WordManager.wordManager.currentLetter);
+        if (heldObject.GetComponent<LetterManager>().letter == WordManager.wordManager.currentLetter)
+        {
+            print("<color=green>Placed Object</color>");
+            heldObject.GetComponent<Rigidbody>().isKinematic = false;
+            heldObject.transform.SetParent(null);
+            heldObject = null;
+            holding = false;
 
+
+            WordManager.wordManager.NextLetter();
+        }
+        else { Drop(); }
     }
 
     
