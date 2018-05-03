@@ -728,6 +728,7 @@ GameObject:
   - component: {fileID: 1126094224}
   - component: {fileID: 1126094223}
   - component: {fileID: 1126094222}
+  - component: {fileID: 1126094226}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -811,6 +812,19 @@ RectTransform:
   m_AnchoredPosition: {x: 9.92, y: 2.71}
   m_SizeDelta: {x: 5, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1126094226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126094221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3044df39207fa488f4788f1cc77f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  word: Camo
+  characters: []
 --- !u!1 &1512143921
 GameObject:
   m_ObjectHideFlags: 0
