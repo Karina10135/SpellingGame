@@ -9,7 +9,7 @@ public class WordManager : MonoBehaviour
     public Text prog;
     public Text letter;
 
-    public string word;
+    public string[] word;
     public string[] characters;
 
     public int letterProgress;
@@ -20,18 +20,20 @@ public class WordManager : MonoBehaviour
     private void Start()
     {
         wordManager = this;
-        characters = new string[word.Length];
-        for (int i = 0; i < word.Length; i++)
-        {
-            characters[i] = word[i].ToString();
-            print(word[i]);
-        }
+        
 
-        ResetProgressBar();
+        ResetProgressBar(0);
     }
 
-    public void ResetProgressBar()
+    public void ResetProgressBar(int level)
     {
+        characters = new string[word[level].Length];
+        for (int i = 0; i < word[level].Length; i++)
+        {
+            characters[i] = word[level][i].ToString();
+            print(word[level][i]);
+        }
+
         letterProgress = 0;
         prog.text = "0/" + characters.Length.ToString();
 
@@ -44,10 +46,24 @@ public class WordManager : MonoBehaviour
 
     }
 
+    public void NextWord()
+    {
+        print("next word");
+        ResetProgressBar(1);
+    }
+
     public void NextLetter()
     {
         letterProgress++;
-        prog.text = "0/" + characters.Length.ToString();
+        prog.text = letterProgress + "/" + characters.Length.ToString();
+
+
+        if (letterProgress == characters.Length)
+        {
+            NextWord();
+            return;
+        }
+
         currentLetter = characters[letterProgress];
         letter.text = currentLetter;
 
