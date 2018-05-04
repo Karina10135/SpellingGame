@@ -11,4 +11,9 @@ public class LetterManager : MonoBehaviour
 
     }
 	
+    public void DestroyLetter()
+    {
+        Destroy(gameObject);
+    }
+
 }

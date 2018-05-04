@@ -15,6 +15,9 @@ public class WordManager : MonoBehaviour
     public int letterProgress;
     public string currentLetter;
 
+    public float currentProg;
+    
+
     public static WordManager wordManager;
 
     private void Start()
@@ -31,11 +34,16 @@ public class WordManager : MonoBehaviour
         for (int i = 0; i < word[level].Length; i++)
         {
             characters[i] = word[level][i].ToString();
-            print(word[level][i]);
         }
 
         letterProgress = 0;
         prog.text = "0/" + characters.Length.ToString();
+
+
+        float ratio = letterProgress / characters.Length;
+        print(ratio + "meant to be" + letterProgress + characters.Length);
+        hitbar.rectTransform.localScale = new Vector3(1, ratio, 1);
+
 
         currentLetter = characters[letterProgress];
         letter.text = currentLetter;
@@ -63,6 +71,11 @@ public class WordManager : MonoBehaviour
             NextWord();
             return;
         }
+
+
+        float ratio = letterProgress / characters.Length;
+        print(ratio + "meant to be" + letterProgress + characters.Length);
+        hitbar.rectTransform.localScale = new Vector3(1, ratio, 1);
 
         currentLetter = characters[letterProgress];
         letter.text = currentLetter;

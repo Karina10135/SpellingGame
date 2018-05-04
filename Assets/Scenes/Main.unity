@@ -1131,7 +1131,7 @@ RectTransform:
   m_GameObject: {fileID: 517492270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1504494754}
   m_RootOrder: 1
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3044df39207fa488f4788f1cc77f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbar: {fileID: 0}
+  hitbar: {fileID: 517492272}
   prog: {fileID: 1438744288}
   letter: {fileID: 1632162370}
   word:
@@ -1610,6 +1610,7 @@ MonoBehaviour:
   characters: []
   letterProgress: 0
   currentLetter: 
+  currentProg: 0
 --- !u!1 &1438744286
 GameObject:
   m_ObjectHideFlags: 0

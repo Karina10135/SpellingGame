@@ -82,14 +82,12 @@ public class PickupManager : MonoBehaviour
 
     void CheckLetterPlacement()
     {
-        print("checking letter");
-        print(heldObject.GetComponent<LetterManager>().letter);
-        print(WordManager.wordManager.currentLetter);
         if (heldObject.GetComponent<LetterManager>().letter == WordManager.wordManager.currentLetter)
         {
             print("<color=green>Placed Object</color>");
             heldObject.GetComponent<Rigidbody>().isKinematic = false;
             heldObject.transform.SetParent(null);
+            heldObject.GetComponent<LetterManager>().DestroyLetter();
             heldObject = null;
             holding = false;
 
