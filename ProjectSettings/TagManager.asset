@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - PlacementArea
+  - HitObject
   layers:
   - Default
   - TransparentFX

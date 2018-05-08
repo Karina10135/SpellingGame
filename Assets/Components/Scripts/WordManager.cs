@@ -12,7 +12,6 @@ public class WordManager : MonoBehaviour
 
     public Image hitbar;
     public Text progressNum;
-    public Text letter;
 
 
     public GameObject letterPrefab;
@@ -43,9 +42,6 @@ public class WordManager : MonoBehaviour
 
     public void UpdateWord(int level)
     {
-        
-
-
         characters = new string[word[level].Length];
         letters = new GameObject[characters.Length];
         for (int i = 0; i < word[level].Length; i++)
@@ -62,22 +58,6 @@ public class WordManager : MonoBehaviour
 
         progressNum.text = "0/" + characters.Length.ToString();
         currentLetter = characters[letterProgress];
-        letter.text = currentLetter;
-    }
-
-    public void ResetProgressBar(int level)
-    {
-        characters = new string[word[level].Length];
-        for (int i = 0; i < word[level].Length; i++)
-        {
-            characters[i] = word[level][i].ToString();
-        }
-
-        letterProgress = 0;
-        progressNum.text = "0/" + characters.Length.ToString();
-
-        currentLetter = characters[letterProgress];
-        letter.text = currentLetter;
     }
 
     public void UpdateProgressBar()
@@ -121,7 +101,6 @@ public class WordManager : MonoBehaviour
         }
 
         currentLetter = characters[letterProgress];
-        letter.text = currentLetter;
 
 
     }
