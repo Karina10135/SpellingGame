@@ -38,6 +38,7 @@ public class WordManager : MonoBehaviour
 
 
         UpdateWord(0);
+        UpdateProgressBar();
     }
 
     public void UpdateWord(int level)
@@ -81,9 +82,9 @@ public class WordManager : MonoBehaviour
 
     public void UpdateProgressBar()
     {
-        //float ratio = letterProgress / characters.Length;
-        //print(ratio + "meant to be" + letterProgress + characters.Length);
-        //hitbar.rectTransform.localScale = new Vector3(1, ratio, 1);
+        float length = characters.Length;
+        float ratio = letterProgress/length;
+        hitbar.rectTransform.localScale = new Vector3(1, ratio, 1);
     }
 
     public void NextWord()
@@ -97,12 +98,12 @@ public class WordManager : MonoBehaviour
         currentWord++;
         if(currentWord == word.Length)
         {
-            print("Finished!!!");
+            GameOver();
         }
         else
         {
             UpdateWord(currentWord);
-
+            UpdateProgressBar();
         }
     }
 
@@ -111,7 +112,7 @@ public class WordManager : MonoBehaviour
         letters[letterProgress].GetComponent<Image>().color = Color.white;
         letterProgress++;
         progressNum.text = letterProgress + "/" + characters.Length.ToString();
-
+        UpdateProgressBar();
 
         if (letterProgress == characters.Length)
         {
@@ -122,6 +123,12 @@ public class WordManager : MonoBehaviour
         currentLetter = characters[letterProgress];
         letter.text = currentLetter;
 
+
+    }
+
+    public void GameOver()
+    {
+        print("Finished!!!");
 
     }
 
