@@ -101,6 +101,7 @@ ModelImporter:
     2300056: polySurface4
     2300058: polySurface5
     2300060: pTorus1
+    2300062: //RootNode
     3300000: pCube10
     3300002: pCube12
     3300004: pCube174
@@ -132,6 +133,7 @@ ModelImporter:
     3300056: polySurface4
     3300058: polySurface5
     3300060: pTorus1
+    3300062: //RootNode
     4300000: polySurface12
     4300002: polySurface11
     4300004: pCube186
@@ -163,6 +165,7 @@ ModelImporter:
     4300056: pCube181
     4300058: pCube215
     4300060: pCube216
+    4300062: Small_house_01
   externalObjects: {}
   materials:
     importMaterials: 1
