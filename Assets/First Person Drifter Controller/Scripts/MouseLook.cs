@@ -51,6 +51,7 @@ public class MouseLook : MonoBehaviour
  
 	void Update ()
 	{
+
 		if (axes == RotationAxes.MouseX)
 		{			
 			rotAverageX = 0f;

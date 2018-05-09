@@ -27,6 +27,7 @@ public class PickupManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(GameManager.GM.inPlay == false) { return; }
         RaycastHit hit;
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 

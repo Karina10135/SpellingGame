@@ -111,4 +111,9 @@ public class WordManager : MonoBehaviour
 
     }
 
+    public void SetNameWord()
+    {
+        word[word.Length - 1] = GameManager.GM.playerName;
+    }
+
 }
