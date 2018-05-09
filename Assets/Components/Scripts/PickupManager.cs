@@ -22,7 +22,8 @@ public class PickupManager : MonoBehaviour
 
     private void Start()
     {
-        pickAxe = true;
+        pickAxe = false;
+        pick.color = Color.gray;
     }
 
     private void FixedUpdate()
@@ -61,8 +62,12 @@ public class PickupManager : MonoBehaviour
                 {
                     if (!holding)
                     {
-                        Pickup(hit.collider.gameObject);
-                        return;
+                        if(pickAxe == false)
+                        {
+                            Pickup(hit.collider.gameObject);
+                            return;
+                        }
+                        
                     }
 
                 }
@@ -93,26 +98,33 @@ public class PickupManager : MonoBehaviour
         }
 
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    if (holding) { return; }
-        //    Select(1);
-        //}
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1)) //Switch to pick
+        {
+            if (holding) { return; }
+            Select(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) //Switch to hand
+        {
+            if (holding) { return; }
+            Select(2);
+        }
+
 
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 4, debugColor);
     }
 
     public void Select(int i)
     {
-        if(i == 1)
+        if(i == 2)
         {
             pick.color = Color.white;
             heldObj.color = Color.gray;
             pickAxe = true;
+            print("pick");
+
         }
 
-        if (i == 2)
+        if (i == 1)
         {
             pick.color = Color.gray;
             heldObj.color = Color.white;
@@ -122,8 +134,8 @@ public class PickupManager : MonoBehaviour
 
     void Pickup(GameObject obj) //Pick up tagged object
     {
-        pickAxe = false;
-        pick.color = Color.gray;
+        Select(1);
+        heldObj.color = Color.white;
         heldObject = obj;
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
         heldObject.transform.parent = holdPos;
@@ -133,8 +145,6 @@ public class PickupManager : MonoBehaviour
 
     void Drop() //Simply drop held object.
     {
-        pickAxe = true;
-        pick.color = Color.white;
         print("<color=red>Dropped Object</color>");
         heldObject.GetComponent<Rigidbody>().isKinematic = false;
         heldObject.transform.SetParent(null);
@@ -146,8 +156,6 @@ public class PickupManager : MonoBehaviour
     {
         if (heldObject.GetComponent<LetterManager>().letter == WordManager.wordManager.currentLetter)
         {
-            pick.color = Color.white;
-            pickAxe = true;
             print("<color=green>Placed Object</color>");
             heldObject.GetComponent<Rigidbody>().isKinematic = false;
             heldObject.transform.SetParent(null);
