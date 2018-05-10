@@ -34,5 +34,13 @@ public class GameManager : MonoBehaviour
         Camera.main.GetComponent<LockMouse>().enabled=true;
 
     }
+    
+    public void CheckName(GameObject name)
+    {
+        //if (name.GetComponent<InputField>().text.Contains())
+        //{
+
+        //}
+    }
 
 }
