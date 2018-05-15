@@ -8,16 +8,21 @@ ModelImporter:
     100000: //RootNode
     100002: Windmill_arms
     100004: Windmill_house
+    100006: Windmill_arm
     400000: //RootNode
     400002: Windmill_arms
     400004: Windmill_house
+    400006: Windmill_arm
     2100000: lambert1
     2300000: Windmill_arms
     2300002: Windmill_house
+    2300004: Windmill_arm
     3300000: Windmill_arms
     3300002: Windmill_house
+    3300004: Windmill_arm
     4300000: Windmill_house
     4300002: Windmill_arms
+    4300004: Windmill_arm
     7400000: Spin
     9500000: //RootNode
   externalObjects: {}
