@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: 24607c152c0eff34d8d12bade38df225
+timeCreated: 1525945010
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Ground_mountain_lvl10 1
+    100004: polySurface644
+    100006: polySurface645
+    100008: polySurface646
+    100010: polySurface649
+    100012: polySurface651
+    100014: polySurface657
+    100016: polySurface659
+    100018: polySurface662
+    100020: polySurface664
+    100022: polySurface665
+    100024: polySurface666
+    100026: polySurface667
+    100028: polySurface670
+    100030: polySurface673
+    100032: polySurface674
+    100034: polySurface676
+    100036: polySurface679
+    100038: polySurface682
+    100040: polySurface684
+    100042: polySurface686
+    100044: polySurface688
+    100046: polySurface689
+    100048: polySurface690
+    100050: polySurface691
+    100052: polySurface692
+    100054: polySurface693
+    100056: polySurface698
+    100058: polySurface699
+    100060: polySurface702
+    100062: polySurface703
+    100064: polySurface705
+    100066: polySurface706
+    100068: polySurface709
+    100070: polySurface710
+    100072: polySurface713
+    100074: polySurface715
+    100076: polySurface716
+    100078: polySurface718
+    400000: //RootNode
+    400002: Ground_mountain_lvl10 1
+    400004: polySurface644
+    400006: polySurface645
+    400008: polySurface646
+    400010: polySurface649
+    400012: polySurface651
+    400014: polySurface657
+    400016: polySurface659
+    400018: polySurface662
+    400020: polySurface664
+    400022: polySurface665
+    400024: polySurface666
+    400026: polySurface667
+    400028: polySurface670
+    400030: polySurface673
+    400032: polySurface674
+    400034: polySurface676
+    400036: polySurface679
+    400038: polySurface682
+    400040: polySurface684
+    400042: polySurface686
+    400044: polySurface688
+    400046: polySurface689
+    400048: polySurface690
+    400050: polySurface691
+    400052: polySurface692
+    400054: polySurface693
+    400056: polySurface698
+    400058: polySurface699
+    400060: polySurface702
+    400062: polySurface703
+    400064: polySurface705
+    400066: polySurface706
+    400068: polySurface709
+    400070: polySurface710
+    400072: polySurface713
+    400074: polySurface715
+    400076: polySurface716
+    400078: polySurface718
+    2100000: lambert1
+    2300000: Ground_mountain_lvl10 1
+    2300002: polySurface644
+    2300004: polySurface645
+    2300006: polySurface646
+    2300008: polySurface649
+    2300010: polySurface651
+    2300012: polySurface657
+    2300014: polySurface659
+    2300016: polySurface662
+    2300018: polySurface664
+    2300020: polySurface665
+    2300022: polySurface666
+    2300024: polySurface667
+    2300026: polySurface670
+    2300028: polySurface673
+    2300030: polySurface674
+    2300032: polySurface676
+    2300034: polySurface679
+    2300036: polySurface682
+    2300038: polySurface684
+    2300040: polySurface686
+    2300042: polySurface688
+    2300044: polySurface689
+    2300046: polySurface690
+    2300048: polySurface691
+    2300050: polySurface692
+    2300052: polySurface693
+    2300054: polySurface698
+    2300056: polySurface699
+    2300058: polySurface702
+    2300060: polySurface703
+    2300062: polySurface705
+    2300064: polySurface706
+    2300066: polySurface709
+    2300068: polySurface710
+    2300070: polySurface713
+    2300072: polySurface715
+    2300074: polySurface716
+    2300076: polySurface718
+    3300000: Ground_mountain_lvl10 1
+    3300002: polySurface644
+    3300004: polySurface645
+    3300006: polySurface646
+    3300008: polySurface649
+    3300010: polySurface651
+    3300012: polySurface657
+    3300014: polySurface659
+    3300016: polySurface662
+    3300018: polySurface664
+    3300020: polySurface665
+    3300022: polySurface666
+    3300024: polySurface667
+    3300026: polySurface670
+    3300028: polySurface673
+    3300030: polySurface674
+    3300032: polySurface676
+    3300034: polySurface679
+    3300036: polySurface682
+    3300038: polySurface684
+    3300040: polySurface686
+    3300042: polySurface688
+    3300044: polySurface689
+    3300046: polySurface690
+    3300048: polySurface691
+    3300050: polySurface692
+    3300052: polySurface693
+    3300054: polySurface698
+    3300056: polySurface699
+    3300058: polySurface702
+    3300060: polySurface703
+    3300062: polySurface705
+    3300064: polySurface706
+    3300066: polySurface709
+    3300068: polySurface710
+    3300070: polySurface713
+    3300072: polySurface715
+    3300074: polySurface716
+    3300076: polySurface718
+    4300000: polySurface651
+    4300002: polySurface649
+    4300004: polySurface665
+    4300006: polySurface664
+    4300008: polySurface659
+    4300010: polySurface657
+    4300012: polySurface667
+    4300014: polySurface666
+    4300016: polySurface715
+    4300018: polySurface718
+    4300020: polySurface716
+    4300022: polySurface713
+    4300024: polySurface710
+    4300026: polySurface709
+    4300028: polySurface706
+    4300030: polySurface705
+    4300032: polySurface702
+    4300034: polySurface703
+    4300036: polySurface699
+    4300038: polySurface698
+    4300040: polySurface676
+    4300042: polySurface679
+    4300044: polySurface690
+    4300046: polySurface689
+    4300048: polySurface688
+    4300050: polySurface693
+    4300052: polySurface692
+    4300054: polySurface691
+    4300056: polySurface670
+    4300058: polySurface662
+    4300060: polySurface674
+    4300062: polySurface673
+    4300064: polySurface682
+    4300066: polySurface686
+    4300068: polySurface684
+    4300070: polySurface646
+    4300072: polySurface645
+    4300074: polySurface644
+    4300076: Ground_mountain_lvl10
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
