@@ -97,44 +97,42 @@ public class PickupManager : MonoBehaviour
 
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            Select();
+        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) //Switch to pick
-        {
-            if (holding) { return; }
-            Select(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) //Switch to hand
-        {
-            if (holding) { return; }
-            Select(2);
-        }
+
+        
 
 
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 4, debugColor);
     }
 
-    public void Select(int i)
+    public void Select()
     {
-        if(i == 2)
+        if (holding) { return; }
+
+        pickAxe = !pickAxe;
+
+        if(pickAxe == true)
         {
             pick.color = Color.white;
             heldObj.color = Color.gray;
             pickAxe = true;
             print("pick");
-
         }
-
-        if (i == 1)
+        else
         {
             pick.color = Color.gray;
             heldObj.color = Color.white;
             pickAxe = false;
         }
+
     }
 
     void Pickup(GameObject obj) //Pick up tagged object
     {
-        Select(1);
         heldObj.color = Color.white;
         heldObject = obj;
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
