@@ -23,7 +23,7 @@ public class PickupManager : MonoBehaviour
     private void Start()
     {
         pickAxe = false;
-        pick.color = Color.gray;
+        //pick.color = Color.gray;
     }
 
     private void FixedUpdate()
