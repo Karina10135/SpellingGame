@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
         else { Time.timeScale = 1f; }
     }
 
-    public void SetName(GameObject name)
+    public void SetName(Text name)
     {
-        playerName = name.GetComponent<InputField>().text;
+        playerName = name.text;
             //name.ToString();
         inPlay = true;
 
