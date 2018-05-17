@@ -44,6 +44,9 @@ public class DialogManager : MonoBehaviour
     public void NextDialog()
     {
         if (!dialog) { return; }
+
+        if (step == sentences.Length) { return; }
+
         StopAllCoroutines();
 
         if(step == 6)
@@ -61,12 +64,9 @@ public class DialogManager : MonoBehaviour
             namePanel.SetActive(true);
         }
 
-        if (step < sentences.Length)
-        {
-            step++;
-            StartCoroutine(TypeSentence(sentences[step]));
 
-        }
+        step++;
+        StartCoroutine(TypeSentence(sentences[step]));
 
     }
 
