@@ -7,6 +7,9 @@ public class DialogManager : MonoBehaviour
 {
     public string name;
 
+
+    public GameObject weapon;
+    public GameObject namePanel;
     public Text characterName;
     public Text dialogueText;
     public int step;
@@ -42,6 +45,21 @@ public class DialogManager : MonoBehaviour
     {
         if (!dialog) { return; }
         StopAllCoroutines();
+
+        if(step == 6)
+        {
+            weapon.SetActive(true);
+        }
+
+        if(step == 7)
+        {
+            weapon.SetActive(false);
+        }
+
+        if(step == 9)
+        {
+            namePanel.SetActive(true);
+        }
 
         if (step < sentences.Length)
         {
