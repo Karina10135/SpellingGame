@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void SetName(Text name)
     {
-        playerName = name.text;
+        playerName = name.text.ToUpper();
         inPlay = true;
 
         Camera.main.GetComponent<LockMouse>().enabled = true;

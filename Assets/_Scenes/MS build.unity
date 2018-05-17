@@ -344,13 +344,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 55432096}
   m_TextComponent: {fileID: 856419231}
   m_Placeholder: {fileID: 1996227763}
-  m_ContentType: 0
+  m_ContentType: 5
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 6
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 4
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -4185,6 +4185,10 @@ Prefab:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 87651787}
+    - target: {fileID: 11400008, guid: f27b3fd2e6b194b9b964e097240e5f2c, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f27b3fd2e6b194b9b964e097240e5f2c, type: 2}
   m_IsPrefabParent: 0
@@ -9681,6 +9685,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2080708648}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &652610867 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114020399629813048, guid: 9b7c8d0a399d79248b599e521b1237a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2080708648}
+  m_Script: {fileID: 11500000, guid: 6b3044df39207fa488f4788f1cc77f82, type: 3}
 --- !u!1001 &665574369
 Prefab:
   m_ObjectHideFlags: 0
@@ -12100,12 +12110,34 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1635345191}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1700960754}
         m_MethodName: SetName
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 55432094}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 856419231}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 652610867}
+        m_MethodName: SetNameWord
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -17440,7 +17472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32546f745e226e44983edd725713dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: MIKE
+  playerName: name
   inPlay: 1
 --- !u!4 &1700960755
 Transform:
