@@ -9,7 +9,7 @@ public class PickupManager : MonoBehaviour
     public Transform holdPos;
     public float maxDistance;
 
-
+    public GameObject weapon;
     public Image pick;
     public Image heldObj;
 
@@ -114,18 +114,22 @@ public class PickupManager : MonoBehaviour
 
         pickAxe = !pickAxe;
 
+        weapon.SetActive(pickAxe);
+
+
         if (pickAxe)
         {
-            pick.color = Color.white;
-            heldObj.color = Color.gray;
-            pickAxe = true;
-            print("pick");
+            
+            //pick.color = Color.white;
+            //heldObj.color = Color.gray;
+            //pickAxe = true;
+            //print("pick");
         }
         else
         {
-            pick.color = Color.gray;
-            heldObj.color = Color.white;
-            pickAxe = false;
+            //pick.color = Color.gray;
+            //heldObj.color = Color.white;
+            //pickAxe = false;
         }
             
 
@@ -136,7 +140,7 @@ public class PickupManager : MonoBehaviour
     void Pickup(GameObject obj) //Pick up tagged object
     {
         pickAxe = false;
-        heldObj.color = Color.white;
+
         heldObject = obj;
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
         heldObject.transform.parent = holdPos;

@@ -113,15 +113,22 @@ public class WordManager : MonoBehaviour
 
     public void SetNameWord()
     {
-        for (int i = 1; i < word.Length; i *= 2)
+        word[0] = GameManager.GM.playerName;
+
+
+        for (int i = 1; i < word.Length; i++)
         {
-            if(word[i-1] != GameManager.GM.playerName){
-                word[i] = GameManager.GM.playerName;
+            if (i != 1)
+            {
+                if (word[i - 2] != GameManager.GM.playerName && word[i - 1] != GameManager.GM.playerName)
+                {
+                    word[i] = GameManager.GM.playerName;
+                }
             }
             
+            
         }
-        //word[2] = GameManager.GM.playerName;
-        //word[word.Length - 1] = GameManager.GM.playerName;
+        
     }
 
 }
