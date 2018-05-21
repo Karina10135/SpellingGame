@@ -27,6 +27,11 @@ public class DialogManager : MonoBehaviour
 
     public void Update()
     {
+        if (!dialog)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             NextDialog();
@@ -49,19 +54,21 @@ public class DialogManager : MonoBehaviour
 
         StopAllCoroutines();
 
-        if(step == 6)
+        if(step == 4)
         {
             weapon.SetActive(true);
         }
 
-        if(step == 7)
+        if(step == 6)
         {
             weapon.SetActive(false);
         }
 
-        if(step == 9)
+        if(step == 8)
         {
             namePanel.SetActive(true);
+            dialog = false;
+            return;
         }
 
 

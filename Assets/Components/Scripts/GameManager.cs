@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public string playerName;
     public bool inPlay;
-
+    public bool paused;
 
     public static GameManager GM;
 
@@ -26,23 +27,36 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
         }
         else { Time.timeScale = 1f; }
+
+        
+    }
+
+    public void PauseGame()
+    {
+        paused = !paused;
+
+        if (paused)
+        {
+            Time.timeScale = 0f;
+
+        }
+        else { Time.timeScale = 1f; }
     }
 
     public void SetName(Text name)
     {
+        if(name == null) { return; }
+
         playerName = name.text.ToUpper();
         inPlay = true;
 
-        Camera.main.GetComponent<LockMouse>().enabled = true;
+        SceneManager.LoadScene("Main");
+
+        //Camera.main.GetComponent<LockMouse>().enabled = true;
+
+
 
     }
 
-    public void CheckName(GameObject name)
-    {
-        //if (name.GetComponent<InputField>().text.Contains())
-        //{
-
-        //}
-    }
 
 }

@@ -35,9 +35,13 @@ public class WordManager : MonoBehaviour
     {
         wordManager = this;
 
-
+        
+        SetNameWord();
         UpdateWord(0);
         UpdateProgressBar();
+
+
+
     }
 
     public void UpdateWord(int level)
@@ -108,7 +112,7 @@ public class WordManager : MonoBehaviour
     public void GameOver()
     {
         print("Finished!!!");
-
+        //Maybe a dialog box or animation of the ship
     }
 
     public void SetNameWord()
@@ -124,6 +128,7 @@ public class WordManager : MonoBehaviour
                 {
                     word[i] = GameManager.GM.playerName;
                 }
+
             }
             
             
