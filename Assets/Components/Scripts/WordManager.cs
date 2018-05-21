@@ -24,9 +24,17 @@ public class WordManager : MonoBehaviour
 
     public int letterProgress;
     public string currentLetter;
+
     public int currentWord;
+    int half;
+
+    public GameObject DialogBox;
+    public Text dialogueText;
+    [TextArea(3, 10)]
+    public string[] log;
 
     public float currentProg;
+
     
 
     public static WordManager wordManager;
@@ -44,6 +52,21 @@ public class WordManager : MonoBehaviour
 
     }
 
+    public void CheckHalfway()
+    {
+        int l = word.Length;
+        half = l / 2;
+
+        if(currentWord == half)
+        {
+
+            Dialog(1);
+            
+
+        }
+    }
+
+    
     public void UpdateWord(int level)
     {
         characters = new string[word[level].Length];
@@ -80,7 +103,18 @@ public class WordManager : MonoBehaviour
         }
         letters = new GameObject[0];
         currentWord++;
-        if(currentWord == word.Length)
+
+
+        //Dialog(1);
+
+        Animator anim = DialogBox.GetComponent<Animator>();
+        anim.SetBool("Talking", true);
+        StartCoroutine(TypeSentence(log[1]));
+        StartCoroutine(WaitTimer(5));
+        anim.SetBool("Talking", false);
+
+
+        if (currentWord == word.Length)
         {
             GameOver();
         }
@@ -109,17 +143,26 @@ public class WordManager : MonoBehaviour
 
     }
 
+    public void Dialog(int sentence)
+    {
+        Animator anim = DialogBox.GetComponent<Animator>();
+        anim.SetBool("Talking", true);
+        StartCoroutine(TypeSentence(log[sentence]));
+        StartCoroutine(WaitTimer(5));
+        anim.SetBool("Talking", false);
+    }
+
     public void GameOver()
     {
         print("Finished!!!");
+        StartCoroutine(TypeSentence(log[2]));
+        
         //Maybe a dialog box or animation of the ship
     }
 
     public void SetNameWord()
     {
         word[0] = GameManager.GM.playerName;
-
-
         for (int i = 1; i < word.Length; i++)
         {
             if (i != 1)
@@ -128,12 +171,24 @@ public class WordManager : MonoBehaviour
                 {
                     word[i] = GameManager.GM.playerName;
                 }
-
             }
-            
-            
         }
-        
+    }
+
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
+    }
+
+    IEnumerator WaitTimer(int secs)
+    {
+        yield return new WaitForSeconds(secs);
     }
 
 }
