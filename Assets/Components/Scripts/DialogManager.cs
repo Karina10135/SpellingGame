@@ -16,10 +16,13 @@ public class DialogManager : MonoBehaviour
 
     [TextArea(3,10)]
     public string[] sentences;
+    public AudioClip[] dialogClips;
+    AudioSource source;
     bool dialog;
 
     public void Start()
     {
+        source = GetComponent<AudioSource>();
         characterName.text = name.ToString();
         //StartCoroutine(StartDialogTimer());
         StartDialog();
@@ -44,15 +47,22 @@ public class DialogManager : MonoBehaviour
         dialog = true;
         
         StartCoroutine(TypeSentence(sentences[0]));
+        SoundManager.instance.PlaySound(source, dialogClips[0]);
     }
 
     public void NextDialog()
     {
         if (!dialog) { return; }
 
-        if (step == sentences.Length) { return; }
+        if (step == sentences.Length - 1)
+        {
+            namePanel.SetActive(true);
+            dialog = false;
+            return;
+        }
 
         StopAllCoroutines();
+
 
         if(step == 4)
         {
@@ -74,6 +84,7 @@ public class DialogManager : MonoBehaviour
 
         step++;
         StartCoroutine(TypeSentence(sentences[step]));
+        SoundManager.instance.PlaySound(source, dialogClips[step]);
 
     }
 
