@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PickupManager : MonoBehaviour
 {
-
+    public AudioSource source;
     public Transform holdPos;
     public float maxDistance;
 
@@ -20,9 +20,14 @@ public class PickupManager : MonoBehaviour
     Color debugColor = Color.red;
     GameObject heldObject;
 
+    public static PickupManager instance;
+
     private void Start()
     {
         pickAxe = false;
+        instance = this;
+        source = GetComponent<AudioSource>();
+             
         //pick.color = Color.gray;
     }
 
@@ -146,6 +151,7 @@ public class PickupManager : MonoBehaviour
         heldObject.transform.parent = holdPos;
         heldObject.transform.position = holdPos.position;
         holding = true;
+        heldObject.GetComponent<LetterManager>().PlaySound();
     }
 
     void Drop() //Simply drop held object.
