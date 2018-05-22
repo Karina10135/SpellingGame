@@ -32,6 +32,7 @@ public class WordManager : MonoBehaviour
     public Text dialogueText;
     [TextArea(3, 10)]
     public string[] log;
+    public AudioClip[] dialogClip;
 
     public float currentProg;
 
@@ -61,7 +62,7 @@ public class WordManager : MonoBehaviour
         {
 
             Dialog(1);
-            
+            SoundManager.instance.PlaySound(PickupManager.instance.source, dialogClip[1]);
 
         }
     }
@@ -107,13 +108,6 @@ public class WordManager : MonoBehaviour
 
         //Dialog(1);
 
-        Animator anim = DialogBox.GetComponent<Animator>();
-        anim.SetBool("Talking", true);
-        StartCoroutine(TypeSentence(log[1]));
-        StartCoroutine(WaitTimer(5));
-        anim.SetBool("Talking", false);
-
-
         if (currentWord == word.Length)
         {
             GameOver();
@@ -156,7 +150,7 @@ public class WordManager : MonoBehaviour
     {
         print("Finished!!!");
         StartCoroutine(TypeSentence(log[2]));
-        
+        SoundManager.instance.PlaySound(PickupManager.instance.source, dialogClip[2]);
         //Maybe a dialog box or animation of the ship
     }
 

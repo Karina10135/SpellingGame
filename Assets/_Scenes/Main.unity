@@ -19181,6 +19181,11 @@ Prefab:
       propertyPath: word.Array.size
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114020399629813048, guid: 9b7c8d0a399d79248b599e521b1237a8,
+        type: 2}
+      propertyPath: dialogClip.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 224600798594958074, guid: 9b7c8d0a399d79248b599e521b1237a8,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -19380,6 +19385,21 @@ Prefab:
       propertyPath: DialogBox
       value: 
       objectReference: {fileID: 488116014}
+    - target: {fileID: 114020399629813048, guid: 9b7c8d0a399d79248b599e521b1237a8,
+        type: 2}
+      propertyPath: dialogClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7c509c45340c9a44935fbbee29bf3b8, type: 3}
+    - target: {fileID: 114020399629813048, guid: 9b7c8d0a399d79248b599e521b1237a8,
+        type: 2}
+      propertyPath: dialogClip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a43732252e204b548a26cc3b4934dfe4, type: 3}
+    - target: {fileID: 114020399629813048, guid: 9b7c8d0a399d79248b599e521b1237a8,
+        type: 2}
+      propertyPath: dialogClip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 66c13d4a4191d34418f9cff8c0ff82e2, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b7c8d0a399d79248b599e521b1237a8, type: 2}
   m_IsPrefabParent: 0
