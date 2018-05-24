@@ -89,6 +89,11 @@ public class DialogManager : MonoBehaviour
 
     }
 
+    public void SetName(Text name)
+    {
+        GameManager.GM.SetName(name);
+    }
+
     IEnumerator StartDialogTimer()
     {
         yield return new WaitForSeconds(2);
@@ -104,6 +109,7 @@ public class DialogManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
+            yield return new WaitForSeconds(0.025f);
             yield return null;
         }
     }

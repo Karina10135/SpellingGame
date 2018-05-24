@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     {
         GM = this;
         inPlay = true;
+        if (GM != this)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
 
@@ -57,6 +61,8 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+    
 
 
 }
