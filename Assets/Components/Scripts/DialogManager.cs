@@ -7,7 +7,7 @@ public class DialogManager : MonoBehaviour
 {
     public string name;
 
-
+    public GameObject dialogPanel;
     public GameObject weapon;
     public GameObject namePanel;
     public Text characterName;
@@ -25,7 +25,8 @@ public class DialogManager : MonoBehaviour
         source = GetComponent<AudioSource>();
         characterName.text = name.ToString();
         //StartCoroutine(StartDialogTimer());
-        StartDialog();
+
+        StartCoroutine(StartDialogTimer());
     }
 
     public void Update()
@@ -90,7 +91,9 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator StartDialogTimer()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
+        dialogPanel.SetActive(true);
+        yield return new WaitForSeconds(1);
         StartDialog();
     }
 
