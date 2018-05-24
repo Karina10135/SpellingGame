@@ -377,7 +377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dialog box text!
+  m_Text: 
 --- !u!222 &277580120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1508,7 +1508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1512156540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1666,6 +1666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Alien Robot
+  dialogPanel: {fileID: 1512156539}
   weapon: {fileID: 825058920}
   namePanel: {fileID: 1231053498}
   characterName: {fileID: 106528543}
