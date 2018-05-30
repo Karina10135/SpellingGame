@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void SetName(Text name)
     {
-        if(name == null) { return; }
+        if(name.text.Length == 0) { return; }
 
         playerName = name.text.ToUpper();
         inPlay = true;
