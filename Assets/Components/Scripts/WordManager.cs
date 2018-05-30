@@ -2,21 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WordManager : MonoBehaviour
 {
-
-
-
-
-
     public Image hitbar;
     public Text progressNum;
 
-
     public GameObject letterPrefab;
     public GameObject wordHolder;
-
 
     public string[] word;
     public string[] characters;
@@ -33,37 +27,47 @@ public class WordManager : MonoBehaviour
     [TextArea(3, 10)]
     public string[] log;
     public AudioClip[] dialogClip;
-
-    public float currentProg;
-
-    
-
     public static WordManager wordManager;
+
+    private bool isTalking;
+    private bool gameComplete;
 
     private void Start()
     {
         wordManager = this;
-
         
         SetNameWord();
         UpdateWord(0);
         UpdateProgressBar();
+    }
 
+    private void Update()
+    {
+        if(isTalking)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                DialogBox.SetActive(false);
+                isTalking = false;
+                if (gameComplete)
+                {
+                    //SCENE YOU WANT AT THE END
+                    SceneManager.LoadScene(0);
+                }
+            }
 
-
+        }
     }
 
     public void CheckHalfway()
     {
-        int l = word.Length;
-        half = l / 2;
+        half = word.Length / 2;
 
         if(currentWord == half)
         {
-
-            Dialog(1);
+            print("half way");
+            StartCoroutine(Dialog(1));
             SoundManager.instance.PlaySound(PickupManager.instance.source, dialogClip[1]);
-
         }
     }
 
@@ -105,8 +109,7 @@ public class WordManager : MonoBehaviour
         letters = new GameObject[0];
         currentWord++;
 
-
-        //Dialog(1);
+        CheckHalfway();
 
         if (currentWord == word.Length)
         {
@@ -137,13 +140,9 @@ public class WordManager : MonoBehaviour
 
     }
 
-    public void Dialog(int sentence)
+    IEnumerator Dialog(int sentence)
     {
-        Animator anim = DialogBox.GetComponent<Animator>();
-        anim.SetBool("Talking", true);
-        StartCoroutine(TypeSentence(log[sentence]));
-        StartCoroutine(WaitTimer(5));
-        anim.SetBool("Talking", false);
+        yield return StartCoroutine(TypeSentence(log[sentence]));
     }
 
     public void GameOver()
@@ -151,7 +150,7 @@ public class WordManager : MonoBehaviour
         print("Finished!!!");
         StartCoroutine(TypeSentence(log[2]));
         SoundManager.instance.PlaySound(PickupManager.instance.source, dialogClip[2]);
-        //Maybe a dialog box or animation of the ship
+        gameComplete = true;
     }
 
     public void SetNameWord()
@@ -171,13 +170,14 @@ public class WordManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        DialogBox.SetActive(true);
         dialogueText.text = "";
-
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return null;
         }
+        isTalking = true;
     }
 
     IEnumerator WaitTimer(int secs)
